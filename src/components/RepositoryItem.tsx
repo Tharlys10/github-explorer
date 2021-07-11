@@ -1,6 +1,20 @@
 import React from 'react';
 
-export function RepositoryItem(props) {
+type Owner = {
+  login: string;
+  avatar_url: string;
+}
+
+type RepositoryItemProps = {
+  repository: {
+    name: string;
+    description: string;
+    html_url: string;
+    owner: Owner;
+  }
+}
+
+export function RepositoryItem(props: RepositoryItemProps) {
   return (
     <li>
       <strong>{props.repository.name}</strong>
